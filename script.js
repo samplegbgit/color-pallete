@@ -1,9 +1,29 @@
 const palette = document.querySelector(".palette");
+const btn = document.getElementById("generate");
 
+function randomColor() {
+  return "#" + Math.floor(Math.random() * 16777215).toString(16);
+}
+
+// Create 5 boxes on load
 for (let i = 0; i < 5; i++) {
   const box = document.createElement("div");
   box.className = "color";
   palette.appendChild(box);
 }
 
-console.log("Day 2: Five color boxes added.");
+btn.onclick = () => {
+  const boxes = document.querySelectorAll(".color");
+  boxes.forEach(box => {
+    const c = randomColor();
+    box.style.background = c;
+    box.textContent = c;
+    box.style.color = "#fff";
+    box.style.display = "flex";
+    box.style.alignItems = "center";
+    box.style.justifyContent = "center";
+    box.style.fontWeight = "bold";
+  });
+};
+
+console.log("Day 3: Random color generation added.");
