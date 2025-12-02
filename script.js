@@ -26,4 +26,13 @@ btn.onclick = () => {
   });
 };
 
-console.log("Day 3: Random color generation added.");
+// Add copy to clipboard
+palette.addEventListener("click", e => {
+  if (e.target.classList.contains("color")) {
+    const color = e.target.textContent;
+    navigator.clipboard.writeText(color);
+    alert("Copied: " + color);
+  }
+});
+
+

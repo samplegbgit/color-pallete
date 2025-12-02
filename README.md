@@ -11,3 +11,6 @@
 ## Day 3
 - Added random color generation
 - Each box shows its hex code
+
+## Day 4
+- Added click-to-copy hex color functionality
