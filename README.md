@@ -14,3 +14,8 @@
 
 ## Day 4
 - Added click-to-copy hex color functionality
+
+## Day 5
+- Added “Save Palette” button
+- Palettes stored using localStorage
+- Display all saved palettes below

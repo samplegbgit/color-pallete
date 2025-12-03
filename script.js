@@ -34,5 +34,39 @@ palette.addEventListener("click", e => {
     alert("Copied: " + color);
   }
 });
+const saveBtn = document.getElementById("save");
+const savedArea = document.getElementById("savedPalettes");
+
+saveBtn.onclick = () => {
+  const boxes = document.querySelectorAll(".color");
+  const paletteColors = [];
+  
+  boxes.forEach(box => paletteColors.push(box.textContent));
+
+  let saved = JSON.parse(localStorage.getItem("palettes")) || [];
+  saved.push(paletteColors);
+  localStorage.setItem("palettes", JSON.stringify(saved));
+
+  renderSaved();
+};
+
+function renderSaved() {
+  savedArea.innerHTML = "<h3>Saved Palettes:</h3>";
+  const saved = JSON.parse(localStorage.getItem("palettes")) || [];
+
+  saved.forEach(pal => {
+    const row = document.createElement("div");
+    row.className = "saved";
+    pal.forEach(c => {
+      const box = document.createElement("div");
+      box.style.background = c;
+      row.appendChild(box);
+    });
+    savedArea.appendChild(row);
+  });
+}
+
+renderSaved();
+
 
 

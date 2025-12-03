@@ -17,3 +17,17 @@ body {
   margin: 10px;
   border-radius: 10px;
 }
+#savedPalettes {
+  margin-top: 30px;
+}
+
+.saved {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.saved div {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+}
